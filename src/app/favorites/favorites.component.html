@@ -1,0 +1,20 @@
+<div class="container">
+    <div *ngIf="favoriteImages.length > 0; else noFavorites">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let image of favoriteImages">
+          <div class="card mb-4">
+            <img [src]="image.src" class="card-img-top" alt="{{image.title}}">
+            <div class="card-body">
+              <h5 class="card-title">{{image.title}}</h5>
+              <p class="card-text">{{image.description}}</p>
+              <p class="card-text">{{image.category}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFavorites>
+      <p>No tienes imágenes favoritas aún.</p>
+    </ng-template>
+  </div>
+  

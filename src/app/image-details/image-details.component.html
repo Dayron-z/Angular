@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="imageDetailsModalLabel">{{ selectedImage?.title }}</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body">
+    <img [src]="selectedImage?.src" class="img-fluid mb-3" alt="{{ selectedImage?.title }}" />
+    <p><strong>Fecha:</strong> {{ selectedImage?.date }}</p>
+    <p>{{ selectedImage?.moreDescription }}</p>
+  </div>
+  

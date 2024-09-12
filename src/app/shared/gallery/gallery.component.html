@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let image of images">
+        <div class="card mb-4">
+          <img [src]="image.src" class="card-img-top" alt="{{image.title}}" (click)="openImageDetails(image)">
+          <div class="card-body">
+            <h5 class="card-title">{{image.title}}</h5>
+            <p class="card-text">{{image.description}}</p>
+            <p class="card-text">{{image.category}}</p>
+            <button class="btn btn-primary" (click)="toggleFavorite(image.id)">
+              <i class="bi" [ngClass]="{'bi-heart': isFavorite(image.id), 'bi-heart-fill': isFavorite(image.id)}"></i>
+              {{ isFavorite(image.id) ? 'Quitar de Favoritos' : 'Añadir a Favoritos' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
